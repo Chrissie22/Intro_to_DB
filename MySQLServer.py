@@ -1,5 +1,4 @@
 import mysql.connector
-from mysql.connector import Error
 
 
 try:
@@ -14,5 +13,5 @@ try:
     db.commit()
     db.close()
     print("Database 'alx_book_store' created successfully")
-except Error as e:
+except mysql.connector.Error as e:
     print("{}: {}".format(e.__class__.__name__, e))
