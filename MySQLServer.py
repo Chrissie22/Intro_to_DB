@@ -1,7 +1,9 @@
-from mysql import Connection
+import mysql.connector
+from mysql.connector import Error
+
 
 try:
-    db = Connection(
+    db = mysql.connector.connect(
         user="root",
         host="localhost",
         password="Boo9475@"
@@ -12,5 +14,5 @@ try:
     db.commit()
     db.close()
     print("Database 'alx_book_store' created successfully")
-except (Exception) as e:
+except Error as e:
     print("{}: {}".format(e.__class__.__name__, e))
