@@ -9,9 +9,10 @@ try:
     )
 
     cursor = db.cursor()
-    cursor.execute("CREATE DATABASE IF NOT EXISTS alx_book_store;")
+    cursor.execute("CREATE TABLE IF NOT EXISTS alx_book_store;")
     db.commit()
     db.close()
-    print("Database 'alx_book_store' created successfully")
+    print("Database 'alx_book_store' created successfully!")
+    
 except mysql.connector.Error as e:
     print("{}: {}".format(e.__class__.__name__, e))
